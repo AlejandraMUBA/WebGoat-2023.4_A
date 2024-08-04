@@ -16,9 +16,15 @@ jobs:
           cache: 'maven'
           architecture: x64
       - name: Build with Maven
-        run: mvn -B package --file pom.xml
+        run: mvn clean verify --file pom.xml
       - name: Review artifacts
         run: ls target
+      - name: Upload jar
+        uses: actions/upload-artifact@v3
+        with:
+         name: webgoat
+         path: app/target/webgoat-2023.4.jar
+
   
   Upload-and-Scan:
     needs: Build
@@ -41,11 +47,11 @@ jobs:
       uses: veracode/veracode-uploadandscan-action@master 
       with: 
         appname: 'WebGoat-2023.4'
-        createprofile: 'true'
+        createprofile: 'false'
         filepath: 'app'
-        vid: "3848a424a18113931339cf47e3b6203e"
-        vkey: "3f808860367da0428092fa323c61981f20c74e5a78a1cf9d33e99be08aeb9b1f788c4119df74d6d6cace3296bf3681286d08fdfc7df91fdb4f6c2db7eb41c174"
+        vid: "${{secrets.VERACODE_API_ID}}"
+        vkey: "${{secrets.VERACODE_API_KEY}}"
         scantimeout: 15
         exclude: '*.js'
         include: '*.jar'
-        criticality: 'VeryLow'
+        criticality: 'Very High'
