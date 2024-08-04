@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
@@ -44,13 +44,13 @@ jobs:
     - name: Move artifact
       run: mv webgoat-2023.4.jar app
     - name: Upload and scan
-      uses: veracode/veracode-uploadandscan-action@master 
+      uses: veracode/veracode-uploadandscan-action@0.2.6 
       with: 
         appname: 'WebGoat-A'
         createprofile: 'true'
         filepath: 'app/webgoat-2023.4.jar'
-        vid: '${{secrets.API_ID}}'
-        vkey: '${{secrets.API_KEY}}'
+        vid: "${{secrets.API_ID}}"
+        vkey: "${{secrets.API_KEY}}"
         scantimeout: 15
         exclude: '*.js'
         include: '*.jar'
