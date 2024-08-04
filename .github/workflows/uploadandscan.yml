@@ -54,4 +54,4 @@ jobs:
         scantimeout: 15
         exclude: '*.js'
         include: '*.jar'
-        criticality: 'Very High'
+        criticality: 'VeryHigh'
