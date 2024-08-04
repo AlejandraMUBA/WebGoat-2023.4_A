@@ -49,8 +49,8 @@ jobs:
         appname: 'WebGoat-A'
         createprofile: 'true'
         filepath: 'app/webgoat-2023.4.jar'
-        vid: '${{ secrets.API_ID }}'
-        vkey: '${{ secrets.API_KEY }}'
+        vid: '${{secrets.API_ID}}'
+        vkey: '${{secrets.API_KEY}}'
         scantimeout: 15
         exclude: '*.js'
         include: '*.jar'
