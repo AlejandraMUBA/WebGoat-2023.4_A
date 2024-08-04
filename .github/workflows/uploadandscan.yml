@@ -46,8 +46,8 @@ jobs:
     - name: Upload and scan
       uses: veracode/veracode-uploadandscan-action@master 
       with: 
-        appname: 'WebGoat-2023.4'
-        createprofile: 'false'
+        appname: 'WebGoat-A'
+        createprofile: 'true'
         filepath: 'app'
         vid: "${{secrets.VERACODE_API_ID}}"
         vkey: "${{secrets.VERACODE_API_KEY}}"
