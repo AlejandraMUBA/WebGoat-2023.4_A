@@ -50,7 +50,7 @@ jobs:
       with: 
         appname: 'WebGoat-A'
         createprofile: 'true'
-        filepath: 'app/webgoat-2023.4.jar'
+        filepath: 'app'
         vid: '${{secrets.API_ID}}'
         vkey: '${{secrets.API_KEY}}'
         scantimeout: 15
