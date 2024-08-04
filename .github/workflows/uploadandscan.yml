@@ -49,8 +49,8 @@ jobs:
         appname: 'AlejandraMUBA/WebGoat-A'
         createprofile: 'true'
         filepath: 'app/target/webgoat-2023.4.jar'
-        vid: "${{secrets.VERACODE_API_ID}}"
-        vkey: "${{secrets.VERACODE_API_KEY}}"
+        vid: '${{secrets.VERACODE_API_ID}}'
+        vkey: '${{secrets.VERACODE_API_KEY}}'
         scantimeout: 15
         exclude: '*.js'
         include: '*.jar'
