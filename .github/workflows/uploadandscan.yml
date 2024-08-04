@@ -23,7 +23,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
          name: webgoat
-         path: app/target/webgoat-2023.4.jar
+         path: target/webgoat-2023.4.jar
 
   
   Upload-and-Scan:
